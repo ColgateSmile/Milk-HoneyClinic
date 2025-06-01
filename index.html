@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="ltr">
+<head>
+	<title>Milk & Honey Clinic By Adin L.D </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://static.elfsight.com/platform/platform.js" defer></script>
+	<style>
+		html {
+			scroll-behavior: smooth;
+		}
+		.language-toggle {
+			position: fixed;
+			top: 1rem;
+			right: 1rem;
+			z-index: 1000;
+		}
+		.language-toggle button {
+			background-color: #343a40;
+			color: #fff;
+			border: none;
+			padding: 6px 16px;
+			margin-left: 5px;
+			border-radius: 20px;
+			cursor: pointer;
+			font-weight: bold;
+			transition: background-color 0.3s, transform 0.3s;
+		}
+		.language-toggle button:hover {
+			background-color: #495057;
+			transform: scale(1.05);
+		}
+		.fade-transition {
+			transition: opacity 0.4s ease-in-out;
+			opacity: 1;
+		}
+		.fade-hidden {
+			opacity: 0;
+		}
+	</style>
+</head>
+<body class="landing">
+
+	<div class="language-toggle">
+		<button type="button" id="btn-en">English</button>
+		<button type="button" id="btn-he">עברית</button>
+	</div>
+
+	<!-- Header -->
+	<header id="header" class="alt">
+		<h1><strong><a href="#">Milk & Honey Clinic</a></strong> By Adin L.D</h1>
+		<nav id="nav">
+			<ul>
+				<li><a href="#" data-i18n="nav_home">Home</a></li>
+				<li><a href="#booking" data-i18n="nav_book">Book</a></li>
+				<li><a href="#instagram" data-i18n="nav_instagram">Instagram</a></li>
+				<li><a href="#" data-i18n="nav_generic">Generic</a></li>
+			</ul>
+		</nav>
+	</header>
+	<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+
+	<!-- Banner -->
+	<section id="banner">
+		<h2>Milk & Honey Clinic</h2>
+	</section>
+
+	<!-- One -->
+	<section id="one" class="wrapper style1 fade-transition">
+		<div class="container 75%">
+			<div class="row 200%">
+				<div class="6u 12u$(medium)">
+					<header class="major">
+						<h2 data-i18n="section1_title">Comfort and Confidence</h2>
+						<p data-i18n="section1_sub">Where beauty meets relaxation</p>
+					</header>
+				</div>
+				<div class="6u$ 12u$(medium)">
+					<p data-i18n="section1_para1">Welcome to our facial treatment center. We offer personalized skincare experiences using the latest methods in a calm, friendly environment.</p>
+					<p data-i18n="section1_para2">Our team is dedicated to enhancing your natural beauty and making sure you feel rejuvenated every time you visit.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Two -->
+	<section id="two" class="wrapper style2 special fade-transition">
+		<div class="container">
+			<header class="major">
+				<h2 data-i18n="section2_title">Our Services</h2>
+				<p data-i18n="section2_sub">Tailored to your skin's needs</p>
+			</header>
+			<div class="row 150%">
+				<div class="6u 12u$(xsmall)">
+					<div class="image fit captioned">
+						<img src="images/pic02.jpg" alt="" width="575" height="390">
+						<h3 data-i18n="section2_img1">Deep Cleansing Facial</h3>
+					</div>
+				</div>
+				<div class="6u$ 12u$(xsmall)">
+					<div class="image fit captioned">
+						<img src="images/pic03.jpg" alt="" width="575" height="390">
+						<h3 data-i18n="section2_img2">Anti-Aging Treatment</h3>
+					</div>
+				</div>
+			</div>
+			<ul class="actions">
+				<li><a href="#" class="button special big" data-i18n="btn_more">Learn More</a></li>
+				<li><a href="#" class="button big" data-i18n="btn_contact">Contact Us</a></li>
+			</ul>
+		</div>
+	</section>
+
+	<!-- Booking Section -->
+	<section id="booking" class="wrapper style2 special fade-transition">
+		<div class="container">
+			<header class="major">
+				<h2 data-i18n="booking_title">Book Your Appointment</h2>
+				<p data-i18n="booking_sub">Select a convenient time for your facial treatment</p>
+			</header>
+			<div class="booking-frame-wrapper">
+				<a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ27Xn7mjocSdX6dhPBZaXYiJNiONaPAdOIuZYyTanlb9itiQBVaoM9Lzr-BT0d294zZWSil8XCN?gv=true" target="_blank" class="btn btn-primary booking-button" data-i18n="booking_button">
+					Click Here to Schedule an Appointment
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Instagram Feed Section -->
+	<section id="instagram" class="wrapper style1 special fade-transition">
+		<div class="container">
+			<header class="major">
+				<h2 data-i18n="instagram_title">Follow Us on Instagram</h2>
+				<p>@milkandhoneyclinic</p>
+			</header>
+			<div class="elfsight-app-ca25fba8-a85b-40eb-8a61-8c3161a2b0f7"></div>
+		</div>
+	</section>
+
+	<script src="assets/js/translation.js"></script>
+	<script>
+		function switchLangFade(lang) {
+			const content = document.querySelectorAll('.fade-transition');
+			content.forEach(el => el.classList.add('fade-hidden'));
+			setTimeout(() => {
+				setLanguage(lang);
+				localStorage.setItem('preferredLanguage', lang);
+				content.forEach(el => el.classList.remove('fade-hidden'));
+			}, 400);
+		}
+		document.getElementById("btn-en").addEventListener("click", () => switchLangFade('en'));
+		document.getElementById("btn-he").addEventListener("click", () => switchLangFade('he'));
+		window.addEventListener('DOMContentLoaded', () => {
+			const savedLang = localStorage.getItem('preferredLanguage');
+			if (savedLang) {
+				switchLangFade(savedLang);
+			}
+		});
+	</script>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/skel-layers.min.js"></script>
+	<script src="assets/js/init.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
